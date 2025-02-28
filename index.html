@@ -4,27 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Удивительные животные</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
-            color: #333;
-            padding: 20px;
-        }
-        h1 {
-            color: #2e8b57;
-        }
-        h2 {
-            color: #4682b4;
-        }
-        ul {
-            margin: 10px 0;
-        }
-    </style>
 </head>
 <body>
-    <h1>Удивительные животные</h1>
-    <p>На нашей планете живёт множество удивительных животных. Давайте узнаем о некоторых из них!</p>
+<header>
+    <h1 id="start">Удивительные животные</h1>
+    <nav>
+        <ul>
+            <li><a href="#home"></a></li>
+            <li><a href="#about"></a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section id="home">
+  <p>На нашей планете живёт множество удивительных животных. Давайте узнаем о некоторых из них!</p>
 
     <h2>Топ-5 интересных животных</h2>
     <ul>
@@ -56,6 +49,8 @@
         </li>
         <li>Тигр</li>
     </ul>
+</section>
+<section id="about">
     <h2>Узнай больше!</h2>
     <p>Хотите узнать больше о животных? Вот несколько полезных ссылок:</p>
     <ul>
@@ -67,7 +62,48 @@
     </ul>
     <h2>Заключение</h2>
     <p>Животные — удивительные существа, и каждый из них уникален. Исследуйте мир животных и открывайте для себя новое!</p>
+</section>
+<aside>
+    <a href="#start">Вернуться в начало</a>
+    <br>
+    <button class="my_button">Нажми на меня</button>
+</aside>
+</main>
+<footer>
+    <p>Контактные данные разработчика</p>
+    <a href="https://t.me/pimpochkaaaa/"
+target="_blank"></a>
+</footer>  
 </body>
 </html>
-
-
+<h2>Хотите прогуляться в галерею удивительных животных?</h2>
+<img id="slider" src="" alt="изображение" width="194" height="182">
+<br>
+<button class="my_button" onclick="previousImage()"> предыдущее</button>
+<button class="my_button" onclick="nextImage()">следующее</button>
+<script>
+    const images = [
+        'images/обезьяна.jpg',
+        'images/собака.jpg',
+        'images/картина медведя.jpg',
+        'images/ежики.jpg',
+        'images/тигр.jfif'
+    ]
+    let currentIndex = 0;
+    function updateImage(){
+        const slider = document.getElementById('slider');
+        slider.src = images[currentIndex];
+    }
+    function nextImage(){
+        currentIndex = (currentIndex + 1) % images.length;
+        updateImage();
+    }
+    function previousImage(){
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateImage();
+        }
+    updateImage();
+</script>
+<h2>Заключение</h2>
+<p>Животные — удивительные существа, и каждый из них уникален. Исследуйте мир животных и открывайте для себя новое!</p>
+</section>
